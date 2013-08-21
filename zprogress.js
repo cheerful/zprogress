@@ -2,17 +2,15 @@
 // MIT-licensed - https://github.com/madrobby/zprogress
 
 ;(function($){
-  var initialized = false,
-    html =
-      '<style>#zprogress{position:fixed;top:0;left:0;width:100%;height:3px;opacity:0;pointer-events:none;-webkit-pointer-events:none;z-index:1000}'+
-      '#zprogress_indicator{width:100%;margin-left:-100%;height:100%;background:#1c88ff}'+
-      '</style>'+
-      '<div id=zprogress><div id=zprogress_indicator></div></div>',
+  var html =
+    '<style>#zprogress{position:fixed;top:0;left:0;width:100%;height:3px;opacity:0;pointer-events:none;-webkit-pointer-events:none;z-index:1000}'+
+    '#zprogress_indicator{width:100%;margin-left:-100%;height:100%;background:#1c88ff}'+
+    '</style>'+
+    '<div id=zprogress><div id=zprogress_indicator></div></div>',
     $wrapper, $indicator, value, timeout
 
   function init(){
-    if(initialized) return
-    initialized = true
+    if($wrapper) return
 
     $('body').append(html)
     $wrapper = $('#zprogress')
