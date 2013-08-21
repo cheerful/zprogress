@@ -8,8 +8,9 @@ but requires jQuery. By making use of Zepto's CSS-based animation
 (and webkit-only stuff), zprogress is leaner (but won't work on as
 many devices, so YMMV).
 
-Otherwise, not regarding CSS, zprogress is a drop-in
-replacement for nprogress.
+Otherwise, not regarding CSS, zprogress is a pretty much a drop-in
+replacement for nprogress. Note that zprogress doesn't have a rotating
+spinner, just the progress bar.
 
 To use it, just include zprogress.js. There's no CSS file.
 
@@ -30,7 +31,14 @@ $.zprogress.inc()
 $.zprogress.color('gold')
 ```
 
-Note that zprogress won't work with jQuery because it relies on the features of
+If you need to change stuff around for your app, I recommend to fork zprogress and
+make adaptions in your fork. This should be reasonably easy and it's better than
+to add tons of customization features that would inflate the code base.
+
+Note that the progress bar color customization feature was explicitly added to
+make it really easy to set the "accent" color in iOS [redacted].
+
+zprogress won't work with jQuery because it relies on the features of
 [Zepto's animate method](http://zeptojs.com/#animate).
 
 zprogress is licensed under the terms of the MIT license.
