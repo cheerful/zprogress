@@ -12,6 +12,7 @@
 
   function init(){
     if(initialized) return
+    initialized = true
 
     $('body').append(html)
     $wrapper = $('#zprogress')
