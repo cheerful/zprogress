@@ -31,6 +31,17 @@ $.zprogress.inc()
 $.zprogress.color('gold')
 ```
 
+You can automatically show the progress bar while any Ajax request is active:
+
+```javascript
+$(document).on('ajaxStart', function(){ $.zprogress.start() })
+$(document).on('ajaxStop', function(){  $.zprogress.done()  })
+```
+
+This will work even if multiple Ajax requests are active at the same time.
+If you have an Ajax request where you don't want the progress bar, you can give
+that request the `global: false` option.
+
 If you need to change stuff around for your app, I recommend to fork zprogress and
 make adaptions in your fork. This should be reasonably easy and it's better than
 to add tons of customization features that would inflate the code base.
