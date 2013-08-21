@@ -24,7 +24,7 @@
   }
 
   function clear(){
-    if(timeout) clearInterval(timeout)
+    if(timeout) clearTimeout(timeout)
     timeout = undefined
   }
 
@@ -50,14 +50,15 @@
       anim()
     },
     set: function(newValue){
+      init()
       clear()
       value = newValue
       anim()
       trickle()
     },
     done: function(){
-      clear()
       init()
+      clear()
       value = 1
       anim()
       setTimeout(function(){$wrapper.animate({ opacity: 0 })}, 100)
