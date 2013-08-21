@@ -36,8 +36,8 @@ $.zprogress.color('gold')
 You can automatically show the progress bar while any Ajax request is active:
 
 ```javascript
-$(document).on('ajaxStart', function(){ $.zprogress.start() })
-$(document).on('ajaxStop', function(){  $.zprogress.done()  })
+$(document).on('ajaxStart', $.zprogress.start).
+  on('ajaxStop', $.zprogress.done)
 ```
 
 This will work even if multiple Ajax requests are active at the same time.
