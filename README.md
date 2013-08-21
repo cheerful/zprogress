@@ -3,7 +3,7 @@ zprogress
 
 Thin-line progress bar with fake trickling for Zepto. You know, like iOS [redacted].
 
-<img src="http://f.cl.ly/items/2I3C1L1C1K421e1Z1C0r/zprogress.gif" width="311" height="64">
+<img src="http://f.cl.ly/items/451l3d3c1y2s2P1z380U/zprogress.gif" width="311" height="64">
 
 Heavily inspired by https://github.com/rstacruz/nprogress, which is awesome
 but requires jQuery. By making use of Zepto's CSS-based animation
