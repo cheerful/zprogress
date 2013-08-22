@@ -27,7 +27,7 @@
   }
 
   function trickle(){
-    setTimeout(function(){
+    timeout = setTimeout(function(){
       $.zprogress.inc((0.85-value)*.035*Math.random())
       trickle()
     }, 350+(400*Math.random()))
