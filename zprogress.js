@@ -7,7 +7,10 @@
     '#zprogress_indicator{width:100%;margin-left:-100%;height:100%;background:#1c88ff}'+
     '</style>'+
     '<div id=zprogress><div id=zprogress_indicator></div></div>',
-    $wrapper, $indicator, value, timeout
+    $wrapper, $indicator, value, timeout,
+    MARGIN = 12.5,
+    LMARGIN = MARGIN/100,
+    RMARGIN = 1 - LMARGIN
 
   function init(){
     if($wrapper) return
@@ -28,7 +31,7 @@
 
   function trickle(){
     timeout = setTimeout(function(){
-      $.zprogress.inc((0.85-value)*.035*Math.random())
+      $.zprogress.inc((RMARGIN-value)*.035*Math.random())
       trickle()
     }, 350+(400*Math.random()))
   }
@@ -37,14 +40,16 @@
     start: function(){
       init()
       clear()
-      value = .1
+      value = LMARGIN
       $wrapper.animate({ opacity: 1 })
       $indicator.animate({ translateX: '0%' }, 0)
-      anim()
-      trickle()
+      setTimeout(function(){
+        anim()
+        trickle()
+      },0)
     },
     inc: function(delta){
-      if(value<.85) value+=delta||.05
+      if(value<RMARGIN) value+=delta||.05
       anim()
     },
     set: function(newValue){
