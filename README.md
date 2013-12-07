@@ -1,7 +1,7 @@
 zprogress
 =========
 
-Thin-line progress bar with fake trickling for Zepto. You know, like iOS [redacted].
+Thin-line progress bar with fake trickling for Zepto. You know, like iOS 7 and Android progress bars.
 
 <img src="http://f.cl.ly/items/451l3d3c1y2s2P1z380U/zprogress.gif" width="311" height="64">
 
@@ -13,6 +13,9 @@ many devices, so YMMV).
 Otherwise, not regarding CSS, zprogress is a pretty much a drop-in
 replacement for nprogress. Note that zprogress doesn't have a rotating
 spinner, just the progress bar.
+
+zprogress is an extraction from [Freckle Time Tracking](http://letsfreckle.com/),
+where it is used in the mobile web version for Ajax requests.
 
 To use it, just include zprogress.js. There's no CSS file.
 
